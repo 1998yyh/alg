@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let str = "abbaad"
+
+		function res(str){
+			return str.split('').reverse().join('');
+		}
+
+		function hui(str){
+			for(let i=str.length;i>=2;i--){
+				for(let j=0;j<=str.length-i;j++){
+					if(str.substr(j,i) == res(str.substr(j,i))){
+						return str.substr(j,i)
+					}
+				}
+			}
+			return false
+		}
+		console.log(hui(str))
+	</script>
+</body>
+</html>

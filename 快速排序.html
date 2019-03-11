@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = [12,3,231,2,4,45,6,4,3,0];
+
+		function sort(arr,left,right){
+			if(left < right){
+				let key = arr[right];
+				let i = left - 1;
+				let temp;
+				for(let j=left;j<=right;j++){
+					if (arr[j]<=key) {
+						i++;
+						temp = arr[i]
+						arr[i] = arr[j]
+						arr[j] = temp;
+					}
+				}
+				sort(arr,left,i-1);
+				sort(arr,i+1,right);
+			}
+			return arr;
+		}
+
+		console.log(sort(arr,0,arr.length-1))
+	</script>
+</body>
+</html>

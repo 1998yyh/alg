@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let str = "abcdefghijklmnopkrstuvwxyz1234567890"
+
+		function random(l){
+			let newStr=""
+			for(let i=0;i<l;i++){
+				newStr+=str.charAt(Math.floor(Math.random()*str.length))
+			}
+			return newStr
+
+		}
+		console.log(random(9))
+	</script>
+</body>
+</html>

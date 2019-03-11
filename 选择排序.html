@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = [12,3,231,2,4,45,6,4,3,0];
+
+		function sort(arr){
+			for(let i=0; i<arr.length-1; i++){
+				let min = arr[i];
+				for(let j=i+1;j<arr.length;j++){
+					if(arr[j]<min){
+						temp = min;
+						min = arr[j];
+						arr[j] = temp;
+						
+					}
+				}
+				arr[i] = min
+			}
+			return arr;
+		}
+
+		console.log(sort(arr))
+	</script>
+</body>
+</html>

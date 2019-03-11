@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = [3,34,4,12,5,2]
+
+		function subset(arr,i,s){
+			if (s==0) {
+				return true
+			}else if(i==0){
+				return arr[i]==s
+			}else if(arr[i]>s){
+				return subset(arr,i-1,s)
+			}else{
+				let A = subset(arr,i-1,s-arr[i])
+				let B = subset(arr,i-1,s)
+				return A||B
+			}
+		}
+
+		console.log(subset(arr,arr.length-1,9))
+	</script>
+</body>
+</html>

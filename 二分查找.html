@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = [1,2,3,4,5,6,7,8,9,10]
+
+		function find(arr,leftIndex,rightIndex,key){
+			var mid = Math.floor((leftIndex+rightIndex)/2)
+			var midValue = arr[mid]
+			console.log(mid,midValue,key)
+
+			if(key>midValue){
+				find(arr,mid,rightIndex,key);
+			}else if(key<midValue){
+				find(arr,leftIndex,mid,key)
+			}else if(key==midValue){
+				console.log(mid) 
+			}else{
+				console.log("meiyou") 
+			}
+		}
+
+		console.log(find(arr,0,arr.length-1,9))
+	</script>
+</body>
+</html>

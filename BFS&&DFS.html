@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//字典
+		let obj = {
+			"A" :["B","C"],
+			"B" :["A","C","D"],
+			"C" :["A","B","E","D"],
+			"D" :["B","C","E"],
+			"E" :["C","D"],
+			"F" :["D"]
+		}
+
+		//广度优先 队列
+		function bfs(obj,n){
+			let arr = [];
+			let o = {};
+			arr[0] = n;
+			o[n] = 1;
+			while(arr.length > 0){
+				let v = arr.shift();
+				let nodes = obj[v];
+				for(let i=0;i<nodes.length;i++){
+					if (!o[nodes[i]]) {
+						arr.push(nodes[i])
+						o[nodes[i]] = 1;
+					}
+				}
+				console.log(v)
+			}
+		}
+
+		//深度优先
+		function dfs(obj,n){
+			let arr = [];
+			let o = {};
+			arr[0] = n;
+			o[n] = 1;
+			while(arr.length > 0){
+				let v = arr.pop();
+				let nodes = obj[v];
+				for(let i=0;i<nodes.length;i++){
+					if (!o[nodes[i]]) {
+						arr.push(nodes[i])
+						o[nodes[i]] = 1;
+					}
+				}
+				console.log(v)
+			}
+		}
+
+		bfs(obj,"B")
+		console.log("/")
+		dfs(obj,"B")
+	</script>
+</body>
+</html>
